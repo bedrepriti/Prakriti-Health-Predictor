@@ -1,125 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Welcome to Prakriti Health Predictor</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prakriti Health Predictor</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Ubuntu:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <!-- ===================== CSS ===================== -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Ubuntu:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+  <!-- ===================== JS ===================== -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
 
-  </head>
-  <body>
+<body>
+  <!-- ===================== BACKGROUND & TITLE ===================== -->
+  <div id="background-overlay">
+    <div id="title-overlay">Prakriti Health Predictor</div>
 
-    <!-- 🔹 Background overlay wrapper -->
-    <div id="background-overlay">
+    <!-- ===================== CENTER CARD ===================== -->
+    <div id="center">
 
-      <!-- 🔹 Title overlay on top of background -->
-      <div id="title-overlay">Prakriti Health Predictor</div>
-
-      <!-- 🔹 Existing content starts -->
-      <div id="center">
-
-        <div id="heads" style="display:none">
-          <h2 id="form1Heading">Patient</h2>
-          <h2 id="form2Heading">Symptoms</h2>
-          <h2 id="form3Heading">Disease</h2>
-          <h2 id="form4Heading">Medication</h2>
-        </div>
-
-        <div class="upper-section">
-          
-          <div id="form">
-            <form id="myForm" name="myform" value="myform" > 
-              <div id="form0Container">
-                <div id="open0"><h2>WELCOME </h2></div>
-              
-                <div id="open1">Before using our application, please read carefully and accept our
-                  Terms and Services:
-                </div>
-                <div id="open2">
-                  
-                  <ul>
-                  <li><b>Non-Diagnostic Nature</b>: <span>Informational checkup only, not a medical diagnosis. Seek professional advice for personalized guidance.</span></li>
-
-                  <li><b>Not a Qualified Medical Opinion</b>: <span>It is essential to note that the checkup results do not replace a qualified medical opinion from a healthcare professional.</span></li>
-
-                  <li><b>Anonymous Information</b>: <span>User information remains anonymous, and no data is stored on our servers.</span></li>
-
-                  <li><b>Secondary Option</b>: <span>Consider it as supplementary; consult a healthcare professional for thorough evaluation.</span></li>
-
-                  <li><b>Acknowledging Associated Risks</b>: <span>Understand the potential risks and use the checkup with caution in medical decision-making.</span></li>
-                  </ul>
-                </div>
-                <div id="open3">
-                  <label style="font-family: 'Ubuntu', sans-serif;font-weight:bolder;">I hereby agree to the Terms and Conditions</label>
-                  <input type="checkbox" id="t-c" required />
-                </div>
-              </div>
-
-              <!-- 🔹 Rest of your forms remain unchanged -->
-              <div id="form1Container" class="formContainer">
-                <!-- Your form1 content -->
-              </div>
-              <div id="form2Container" class="formContainer">
-                <!-- Your form2 content -->
-              </div>
-              <div id="form3Container" class="formContainer">
-                <!-- Your form3 content -->
-              </div>
-              <div id="form4Container" class="formContainer">
-                <!-- Your form4 content -->
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="lower-section" id="downbottons">
-          <button type="button" id="backbtn" class="btn" onclick="prevForm()" disabled>Back</button>
-          <button type="button" id="t-c-submit" class="btn" onclick="nextForm()" disabled>Next</button>
-        </div>
-
+      <!-- Headings for multi-step form -->
+      <div id="heads" style="display:none">
+        <h2 id="form1Heading">Patient</h2>
+        <h2 id="form2Heading">Symptoms</h2>
+        <h2 id="form3Heading">Disease</h2>
+        <h2 id="form4Heading">Medication</h2>
       </div>
-      <!-- 🔹 Existing content ends -->
 
+      <!-- ===================== FORM ===================== -->
+      <div class="upper-section">
+        <form id="myForm" name="myform">
+
+          <!-- Step 0: Welcome & Terms -->
+          <div id="form0Container">
+            <div id="open0"><h2>WELCOME</h2></div>
+            <div id="open1">
+              Before using our application, please read carefully and accept our Terms and Services:
+            </div>
+            <div id="open2">
+              <ul>
+                <li><b>Non-Diagnostic Nature</b>: Informational checkup only, not a medical diagnosis.</li>
+                <li><b>Not a Qualified Medical Opinion</b>: Results do not replace professional medical advice.</li>
+                <li><b>Anonymous Information</b>: No personal data is stored on our servers.</li>
+                <li><b>Secondary Option</b>: Consider this as supplementary; consult a professional for thorough evaluation.</li>
+                <li><b>Acknowledging Associated Risks</b>: Use the checkup with caution in medical decision-making.</li>
+              </ul>
+            </div>
+            <div id="open3">
+              <label for="t-c" style="font-family: 'Ubuntu', sans-serif; font-weight: bolder;">
+                I hereby agree to the Terms and Conditions
+              </label>
+              <input type="checkbox" id="t-c" required />
+            </div>
+          </div>
+
+          <!-- Step 1-4: Forms -->
+          <div id="form1Container" class="formContainer"></div>
+          <div id="form2Container" class="formContainer"></div>
+          <div id="form3Container" class="formContainer"></div>
+          <div id="form4Container" class="formContainer"></div>
+        </form>
+      </div>
+
+      <!-- ===================== LOWER BUTTONS ===================== -->
+      <div class="lower-section" id="downbuttons">
+        <button type="button" id="backbtn" class="btn" onclick="prevForm()" disabled>Back</button>
+        <button type="button" id="t-c-submit" class="btn" onclick="nextForm()" disabled>Next</button>
+      </div>
     </div>
-    <!-- 🔹 End of background-overlay -->
+  </div>
 
-    <div class="round-div"><img src="/static/images/location.png" style="position:relative;right:-10px;bottom:-10px;height: 30px;"></div>
+  <!-- ===================== FLOATING LOCATION BUTTON ===================== -->
+  <div class="round-div">
+    <img src="/static/images/location.png" style="height: 30px;">
+  </div>
 
-    <div id="locate-hospital" class="rectangle-form">
-      <!-- Your locate hospital content -->
-    </div>
+  <!-- ===================== LOCATE HOSPITAL FORM ===================== -->
+  <div id="locate-hospital" class="rectangle-form">
+    <!-- Hospital location content goes here -->
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <!-- ===================== CUSTOM SCRIPT ===================== -->
+  <script>
+    // Location input toggle
+    const liveLocationRadio = document.getElementById('liveLocation');
+    const writtenLocationRadio = document.getElementById('writtenLocation');
+    const locationInput = document.getElementById('locationInput');
 
-    <script>
-      const liveLocationRadio = document.getElementById('liveLocation');
-      const writtenLocationRadio = document.getElementById('writtenLocation');
-      const locationInput = document.getElementById('locationInput');
+    if(liveLocationRadio && writtenLocationRadio && locationInput){
+      liveLocationRadio.addEventListener('change', () => locationInput.disabled = true);
+      writtenLocationRadio.addEventListener('change', () => locationInput.disabled = false);
+    }
 
-      liveLocationRadio.addEventListener('change', () => {
-        locationInput.disabled = true;
-      });
+    // Hospital range slider
+    const hospitalRange = document.getElementById('hospitalRange');
+    const hospitalValue = document.getElementById('hospitalValue');
 
-      writtenLocationRadio.addEventListener('change', () => {
-        locationInput.disabled = false;
-      });
+    if(hospitalRange && hospitalValue){
+      hospitalRange.addEventListener('input', () => hospitalValue.textContent = hospitalRange.value);
+    }
+  </script>
 
-      const hospitalRange = document.getElementById('hospitalRange');
-      const hospitalValue = document.getElementById('hospitalValue');
-
-      hospitalRange.addEventListener('input', () => {
-        hospitalValue.textContent = hospitalRange.value;
-      });
-    </script>
-
-    <script src="{{ url_for('static', filename='index.js') }}"></script>
-  </body>
+  <!-- ===================== MAIN JS ===================== -->
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
 </html>

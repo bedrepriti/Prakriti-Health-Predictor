@@ -991,7 +991,7 @@ window.onload = function () {
 
       <div style="position: absolute; top: 10px; right: 10px; font-size: xx-small;">
           <div>${dateString} ${timeString}</div>
-          <div> made by <a href="https://prakriti-app-xvis.onrender.com/" target="_blank">PRAKRITI GUIDE</a> </div> 
+          <div> made by <a href="https://prakriti-health-app.onrender.com/" target="_blank">HEALTH GUIDE</a> </div> 
       </div>
       
       <p>____________________________________________________________________________________________</p>
@@ -1011,7 +1011,7 @@ window.onload = function () {
 
           <div id="subhead" style="text-align: center;font-size: small;">
               <div style="font-weight: bold;margin-bottom: 5px;">DISCLAIMER</div>
-              <div>Please note that THE HEALTHCARE SYSTEM FOR INDIVIDUAL PRAKRITI  is not a substitute for professional medical advice.</div>
+              <div>Please note that THE PRAKIRTI HEALTH PREDICTOR  is not a substitute for professional medical advice.</div>
               <div>It is intended for informational purposes only and should not be considered a medical diagnosis.</div>
               <div>Always consult a qualified healthcare professional for accurate medical evaluation and treatment.</div>
           </div>

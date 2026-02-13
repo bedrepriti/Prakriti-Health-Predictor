@@ -1,29 +1,29 @@
-# Individual-Prakriti  
-### ML-Powered Disease Prediction & Healthcare Recommendation System
+# Prakriti-Health-Predictor 🚑
+### AI-Powered Disease Prediction & Healthcare Recommendation System
 
-Individual-Prakriti is a machine-learning–based healthcare web application that predicts possible diseases based on user-entered symptoms and provides supportive medical insights.  
-The project demonstrates the practical use of **machine learning models integrated with a Flask web application**.
+**Prakriti-Health-Predictor** is a **machine learning-based healthcare web app** that predicts possible diseases from user-entered symptoms and provides medical insights.  
+It demonstrates practical **integration of ML models with a Flask web interface**.
 
 ---
 
-## 🚀 Project Overview
+## 🌟 Project Overview
 
-The system allows users to:
-- Enter symptoms through a web interface
-- Predict potential diseases using trained ML models
-- View suggested medications and precautions
-- Locate nearby healthcare facilities
-- Generate downloadable PDF prescriptions for reference
+The application enables users to:
+- Enter their symptoms through a **friendly web interface**
+- Get **predicted diseases** using trained ML models
+- Receive **medication and precaution suggestions**
+- Locate **nearby hospitals**
+- Download **PDF prescriptions** for reference
 
-This project focuses on **applying ML models in a real-world healthcare workflow**, not just model training.
+This project showcases **end-to-end ML workflow applied to healthcare**, not just model building.
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Backend
-- Python
-- Flask
+- Python 3
+- Flask framework
 
 ### Machine Learning
 - scikit-learn
@@ -31,68 +31,65 @@ This project focuses on **applying ML models in a real-world healthcare workflow
 - joblib / pickle
 
 ### Frontend
-- HTML
-- CSS
+- HTML5
+- CSS3
 
-### Additional Tools
+### Other Tools
 - PDF generation for prescriptions
 
 ---
 
 ## ✨ Key Features
 
-- Symptom-based disease prediction  
-- Trained ML model integration with Flask  
-- User-friendly web interface  
-- Medication and precaution suggestions  
-- Nearby hospital lookup  
-- PDF prescription generation  
+- Symptom-based **disease prediction**  
+- ML model integrated with Flask  
+- **User-friendly web interface**  
+- Medication & precaution recommendations  
+- **Nearby hospital finder**  
+- PDF **prescription generation**
 
 ---
 
 ## 🧠 Learning Outcomes
 
-This project helped me understand:
-- End-to-end ML workflow (data → model → deployment)
-- Integrating ML models into web applications
-- Handling real-world user inputs safely
-- Flask routing and request handling
-- Model serialization and reuse
+Through this project, I learned:
+- End-to-end ML deployment workflow  
+- Integrating ML models into a **live web app**  
+- Handling **user inputs safely**
+- Flask **routing & request handling**
+- Model **serialization & reuse**
 
 ---
 
 ## 📌 Project Status
 
-- Core functionality implemented  
-- Suitable for academic, learning, and demonstration purposes  
-- Further enhancements possible (authentication, live APIs, UI improvements)
+- Core features implemented ✅  
+- Suitable for **learning and demonstration**
+- Future improvements: authentication, live APIs, better UI
 
 ---
 
-## ⚠️ Attribution & Ownership Notice (Important)
+## ⚠️ Attribution & Ownership Notice
 
-This project is **adapted and extended for learning purposes**.
+This project is **built for learning and demonstration purposes**:
 
-- I worked on **integration, customization, and deployment aspects**
-- Some ML logic and datasets may be inspired by or adapted from external educational sources
-- Proper credit is retained where applicable via the project license
+- I handled **integration, customization, and deployment**  
+- Some ML datasets or logic may be adapted from public educational resources  
+- Proper attribution is maintained wherever applicable  
 
-This repository is showcased to demonstrate **machine-learning integration skills**, not as a production medical system.
+**Note:** This is not a production-ready medical system.
 
 ---
 
 ## 🧪 Disclaimer
 
-This application is **not a medical diagnosis tool**.  
-Predictions are for **educational and demonstration purposes only** and should not replace professional medical advice.
+This application **does not provide medical diagnosis**.  
+All predictions are **educational/demonstration purposes only**.
 
 ---
 
-## 👨‍💻 Author
+## 👩‍💻 Author
 
-**Priti Bedre**  
-Full-Stack Java Developer  
+**Priti Bedre** – Full-Stack Java Developer  
 
-GitHub: https://github.com/bedrepriti
-
-
+GitHub: [https://github.com/bedrepriti](https://github.com/bedrepriti)

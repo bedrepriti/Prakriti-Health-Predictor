@@ -1019,8 +1019,8 @@ window.onload = function () {
 
           <div id="subhead" style="text-align: center;font-size: small;">
               <div style="font-weight: bold;margin-bottom: 5px;">CONTACT CREATOR</div>
-              <div><a href="https://github.com/RKROCKS47" target="_blank">GitHub</a>
-              <a href="https://www.linkedin.com/in/rohit-ingale47/" target="_blank">LinkedIn</a></div>
+              <div><a href="https://github.com/bedrepriti" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/priti-bedre-182327237/" target="_blank">LinkedIn</a></div>
           </div>
 
       

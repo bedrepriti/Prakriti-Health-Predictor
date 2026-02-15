@@ -66,19 +66,6 @@ Through this project, I learned:
 - Core features implemented ✅  
 - Suitable for **learning and demonstration**
 - Future improvements: authentication, live APIs, better UI
-
----
-
-## ⚠️ Attribution & Ownership Notice
-
-This project is **built for learning and demonstration purposes**:
-
-- I handled **integration, customization, and deployment**  
-- Some ML datasets or logic may be adapted from public educational resources  
-- Proper attribution is maintained wherever applicable  
-
-**Note:** This is not a production-ready medical system.
-
 ---
 
 ## 🧪 Disclaimer
